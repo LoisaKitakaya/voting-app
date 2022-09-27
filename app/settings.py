@@ -10,7 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import os
 from pathlib import Path
+
+# cloudinary
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,6 +44,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # my apps
+    'core',
+    'candidates',
+    'polls',
+    'voters',
+    'votes',
+    'results',
+
+    # 3rd party apps
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +72,9 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -105,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -117,7 +137,22 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# cloudinary config
+
+cloudinary.config( 
+  cloud_name = "dit0fii18", 
+  api_key = "488158286488541", 
+  api_secret = "15AEbpxsXhNF828AaNQtQy7iOR0",
+  secure = True
+)
