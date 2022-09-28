@@ -4,17 +4,38 @@ body {
   margin: 0 !important;
 }
 
+.main-body {
+  min-height: 100vh !important;
+}
+
 .footer-links {
-  margin: 0 1rem !important;
+  margin: 0 !important;
   padding: 0 !important;
+  list-style: none !important;
 }
 
 .footer-links a {
   text-decoration: none !important;
-  color: black !important;
+  color: #212428 !important;
 }
 
 .footer-links a:hover {
   color: blue !important;
   text-decoration: underline !important;
+}
+
+.intro1-img {
+  width: 750px;
+  height: 600px;
+}
+
+.intro3-img {
+  width: 600px;
+  height: 400px;
+}
+
+.intro5-bg {
+  background-image: url("https://images.pexels.com/photos/7709259/pexels-photo-7709259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
+  height: 600px;
 }
