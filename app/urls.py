@@ -26,7 +26,8 @@ urlpatterns = [
     # path('candidates/', include('candidates.urls')),
     # path('polls/', include('polls.urls')),
     # path('votes/', include('votes.urls')),
-    # path('results/', include('results.urls'))
+    # path('results/', include('results.urls')),
+    # path('organizers/', include('organizers.urls'))
 ]
 
 admin.site.site_header = 'Admin Panel'

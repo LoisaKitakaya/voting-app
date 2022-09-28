@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'voters',
     'votes',
     'results',
+    'organizers',
 
     # 3rd party apps
     'cloudinary',
