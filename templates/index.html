@@ -60,6 +60,15 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <!-- my css -->
 
+    <!-- htmx -->
+    <script
+      src="https://unpkg.com/htmx.org@1.8.0"
+      integrity="sha384-cZuAZ+ZbwkNRnrKi05G/fjBX+azI9DNOkNYysZ0I/X5ZFgsmMiBXgDZof30F5ofc"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- htmx -->
+
     <!-- jquery -->
     <script
       src="https://code.jquery.com/jquery-3.6.1.js"
@@ -79,12 +88,15 @@
     <!-- custom additions -->
 
     <!-- site title -->
-    <title>Voting App | {% block title %} Home {% endblock %}</title>
+    <title>Voting App | {% block title %} {% endblock %}</title>
     <!-- site title -->
   </head>
   <body>
-    <!-- body -->
+    <!-- navigation -->
+    {% include 'navbar.html' %}
+    <!-- navigation -->
 
+    <!-- body -->
     <div class="main-body">
       <!-- template entry -->
       {% block body %}
@@ -92,8 +104,15 @@
       {% endblock %}
       <!-- template entry -->
     </div>
-
     <!-- body -->
+
+    <!-- footer -->
+    {% include 'footer.html' %}
+    <!-- footer -->
+
+    <!-- notifications -->
+    {% include 'notifications.html' %}
+    <!-- notifications -->
   </body>
 
   <!-- custom js scripts -->
