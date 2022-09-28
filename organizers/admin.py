@@ -13,3 +13,8 @@ class OrganizerAdminView(admin.ModelAdmin):
         'organization',
         'status',
     )
+
+    list_filter = (
+        'created_date',
+        'updated_date',
+    )
