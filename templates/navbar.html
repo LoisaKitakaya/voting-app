@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-white sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><h2>Voting App</h2></a>
+    <a class="navbar-brand" href="{% url 'home-page' %}"><h2>Voting App</h2></a>
     <button
       class="navbar-toggler"
       type="button"
@@ -75,8 +75,16 @@
             Log in
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">As organizer</a></li>
-            <li><a class="dropdown-item" href="#">As voter</a></li>
+            <li>
+              <a class="dropdown-item" href="{% url 'login-organizer' %}"
+                >As organizer</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'login-voter' %}"
+                >As voter</a
+              >
+            </li>
           </ul>
         </li>
       </ul>
@@ -91,9 +99,15 @@
         </button>
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" href="#">Register as an organizer</a>
+            <a class="dropdown-item" href="{% url 'register-organizer' %}"
+              >Register as an organizer</a
+            >
           </li>
-          <li><a class="dropdown-item" href="#">Register as a voter</a></li>
+          <li>
+            <a class="dropdown-item" href="{% url 'register-voter' %}"
+              >Register as a voter</a
+            >
+          </li>
         </ul>
       </div>
     </div>
