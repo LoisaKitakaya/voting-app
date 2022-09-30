@@ -1,11 +1,13 @@
 from django.db import models
 from organizers.models import Organizer
+from polls.models import Poll
 from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Candidate(models.Model):
 
     organizer = models.ForeignKey(Organizer, on_delete=models.CASCADE)
+    poll = models.ForeignKey(Poll, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=254, blank=False)
     last_name = models.CharField(max_length=254, blank=False)
     email = models.EmailField(max_length=254, blank=False)

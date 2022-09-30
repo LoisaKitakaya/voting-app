@@ -9,24 +9,24 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('organizers', '0004_organizer_organization_position'),
+        ('candidates', '0002_initial'),
+        ('voters', '0002_rename_voters_voter'),
+        ('polls', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Poll',
+            name='Vote',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('seat', models.CharField(max_length=254)),
-                ('intro', models.TextField()),
-                ('begin_date', models.DateField()),
-                ('end_date', models.DateField()),
                 ('created_date', models.DateTimeField(auto_now_add=True)),
                 ('updated_date', models.DateTimeField(auto_now=True)),
-                ('organizer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='organizers.organizer')),
+                ('candidate', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='candidates.candidate')),
+                ('poll', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='polls.poll')),
+                ('voter', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='voters.voter')),
             ],
             options={
-                'db_table': 'Polls Table',
+                'db_table': 'Votes Table',
                 'ordering': ['-created_date'],
             },
         ),
