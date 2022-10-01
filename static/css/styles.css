@@ -1,11 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis&family=Montserrat&display=swap");
+
 body {
   scroll-behavior: smooth !important;
   padding: 0 !important;
   margin: 0 !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.navbar-brand {
+  font-family: "Dosis", sans-serif !important;
 }
 
 .main-body {
-  min-height: 100vh !important;
+  min-height: 92vh !important;
 }
 
 .footer-links {
@@ -25,8 +32,9 @@ body {
 }
 
 .intro1-img {
-  width: 750px;
-  height: 600px;
+  background-image: url("https://images.pexels.com/photos/574073/pexels-photo-574073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1s");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .intro3-img {
@@ -40,6 +48,7 @@ body {
   height: 600px;
 }
 
-.app-message, .alert {
+.app-message,
+.alert {
   border-radius: 0 !important;
 }
