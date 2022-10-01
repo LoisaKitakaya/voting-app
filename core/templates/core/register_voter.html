@@ -21,8 +21,64 @@
 {% block body %}
 
 <!-- home page -->
-<div class="landing-page">
-  <h1>Register voter</h1>
+<div class="container pt-3 pb-5">
+  <div class="mb-3">
+    <h1 class="text-center">Register as a voter</h1>
+  </div>
+  <hr />
+  <!--  -->
+  <div class="card text-bg-light m-auto" , style="width: 60%">
+    <div class="card-body">
+      <form action="#" method="POST">
+        <!-- csrf & form -->
+        {% csrf_token %}
+        <!-- csrf & form -->
+
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="id_type">ID type</label>
+          <select class="form-select" name="id_type">
+            <option selected>Choose...</option>
+            <option value="1">National ID</option>
+            <option value="2">Passport</option>
+          </select>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ID number"
+            name="personal_id"
+            required
+          />
+          <label for="personal_id">ID number</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="your country"
+            name="country"
+            required
+          />
+          <label for="country">Country</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="your organization"
+            name="organization"
+            required
+          />
+          <label for="organization">Organization</label>
+        </div>
+        <button type="submit" class="btn btn-success mb-3 container-fluid">
+          Register account
+        </button>
+      </form>
+    </div>
+  </div>
+  <!--  -->
 </div>
 <!-- home page -->
 

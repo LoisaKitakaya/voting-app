@@ -30,6 +30,10 @@
   <div class="card text-bg-light m-auto" , style="width: 60%">
     <div class="card-body">
       <form action="#" method="POST">
+        <!-- csrf & form -->
+        {% csrf_token %}
+        <!-- csrf & form -->
+
         <div class="form-floating mb-3">
           <input
             type="text"

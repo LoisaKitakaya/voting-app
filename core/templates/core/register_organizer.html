@@ -30,6 +30,10 @@
   <div class="card text-bg-light m-auto" , style="width: 60%">
     <div class="card-body">
       <form action="#" method="POST">
+        <!-- csrf & form -->
+        {% csrf_token %}
+        <!-- csrf & form -->
+
         <div class="input-group mb-3">
           <label class="input-group-text" for="id_type">ID type</label>
           <select class="form-select" name="id_type">
