@@ -29,7 +29,7 @@
   <!--  -->
   <div class="card text-bg-light m-auto" , style="width: 60%">
     <div class="card-body">
-      <form action="#" method="POST">
+      <form method="POST">
         <!-- csrf & form -->
         {% csrf_token %}
         <!-- csrf & form -->
@@ -59,10 +59,10 @@
             type="text"
             class="form-control"
             placeholder="e.g. Doe"
-            name="second_name"
+            name="last_name"
             required
           />
-          <label for="second_name">Second name</label>
+          <label for="last_name">Second name</label>
         </div>
         <div class="form-floating mb-3">
           <input

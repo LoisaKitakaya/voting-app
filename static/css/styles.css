@@ -39,3 +39,7 @@ body {
   background-size: cover;
   height: 600px;
 }
+
+.app-message, .alert {
+  border-radius: 0 !important;
+}

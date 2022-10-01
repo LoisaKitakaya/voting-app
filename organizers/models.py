@@ -26,4 +26,4 @@ class Organizer(models.Model):
 
     def __str__(self) -> str:
         
-        return self.first_name
+        return self.user.username

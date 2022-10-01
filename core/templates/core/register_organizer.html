@@ -29,7 +29,7 @@
   <!--  -->
   <div class="card text-bg-light m-auto" , style="width: 60%">
     <div class="card-body">
-      <form action="#" method="POST">
+      <form method="POST">
         <!-- csrf & form -->
         {% csrf_token %}
         <!-- csrf & form -->
@@ -38,8 +38,8 @@
           <label class="input-group-text" for="id_type">ID type</label>
           <select class="form-select" name="id_type">
             <option selected>Choose...</option>
-            <option value="1">National ID</option>
-            <option value="2">Passport</option>
+            <option value="national id">National ID</option>
+            <option value="passport">Passport</option>
           </select>
         </div>
         <div class="form-floating mb-3">
@@ -72,7 +72,7 @@
           />
           <label for="country">Country</label>
         </div>
-        <select class="form-select mb-3">
+        <select class="form-select mb-3" name="sector">
           <option selected>Sector you represent</option>
           <option value="University">university</option>
           <option value="Political party">political party</option>
