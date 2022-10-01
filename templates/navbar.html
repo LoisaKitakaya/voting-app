@@ -64,28 +64,8 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Pricing plans</a>
         </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Log in
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a class="dropdown-item" href="{% url 'login-organizer' %}"
-                >As organizer</a
-              >
-            </li>
-            <li>
-              <a class="dropdown-item" href="{% url 'login-voter' %}"
-                >As voter</a
-              >
-            </li>
-          </ul>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Log in</a>
         </li>
       </ul>
       <div class="dropdown d-flex dropstart">
@@ -99,12 +79,12 @@
         </button>
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" href="{% url 'register-organizer' %}"
+            <a class="dropdown-item" href="{% url 'signup-organizer' %}"
               >Register as an organizer</a
             >
           </li>
           <li>
-            <a class="dropdown-item" href="{% url 'register-voter' %}"
+            <a class="dropdown-item" href="{% url 'signup-voter' %}"
               >Register as a voter</a
             >
           </li>

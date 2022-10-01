@@ -14,10 +14,14 @@ def register_voter(request):
 
     return render(request, 'core/register_voter.html')
 
-def login_organizer(request):
+def login(request):
 
-    return render(request, 'core/login_organizer.html')
+    return render(request, 'core/login.html')
 
-def login_voter(request):
+def signup_organizer(request):
 
-    return render(request, 'core/login_voter.html')
+    return render(request, 'core/signup.html')
+
+def signup_voter(request):
+
+    return render(request, 'core/signup.html')
