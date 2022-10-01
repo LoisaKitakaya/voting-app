@@ -8,8 +8,7 @@ class VoterAdminView(admin.ModelAdmin):
     model = Voter
 
     list_display = (
-        'first_name',
-        'email',
+        'user',
         'organization',
     )
 

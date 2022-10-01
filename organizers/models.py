@@ -1,11 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Organizer(models.Model):
 
-    first_name = models.CharField(max_length=254, blank=False)
-    last_name = models.CharField(max_length=254, blank=False)
-    email = models.EmailField(max_length=254, blank=False)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="organizer")
     id_type = models.CharField(max_length=254, blank=False)
     personal_identification = models.CharField(max_length=254, blank=False)
     phone = models.CharField(max_length=254, blank=False)

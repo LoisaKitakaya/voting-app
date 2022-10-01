@@ -8,8 +8,7 @@ class OrganizerAdminView(admin.ModelAdmin):
     model = Organizer
 
     list_display = (
-        'first_name',
-        'email',
+        'user',
         'organization',
         'status',
     )
