@@ -134,34 +134,42 @@ def signup_organizer(request):
 
         password2 = request.POST['password2']
 
-        if password1 == password2:
+        user_already_exists = User.objects.filter(email=email).first()
 
-            User.objects.create(
-                username=username,
-                email=email,
-                first_name=first_name,
-                last_name=last_name
-            )
+        if not user_already_exists:
 
-            new_user = User.objects.get(email=email)
+            if password1 == password2:
 
-            new_user.set_password(password1)
+                User.objects.create(
+                    username=username,
+                    email=email,
+                    first_name=first_name,
+                    last_name=last_name
+                )
 
-            new_user.save()
+                new_user = User.objects.get(email=email)
 
-            user = authenticate(request, username=username, password=password1)
+                new_user.set_password(password1)
 
-            if user is not None:
+                new_user.save()
 
-                login(request, user)
+                user = authenticate(request, username=username, password=password1)
 
-            messages.success(request, 'Your user account has been created. Logged in successfully!')
+                if user is not None:
 
-            return redirect('register-organizer')
+                    login(request, user)
+
+                messages.success(request, 'Your user account has been created. Logged in successfully!')
+
+                return redirect('register-organizer')
+
+            else:
+
+                messages.error(request, 'Passwords did not match')
 
         else:
 
-            messages.error(request, 'Passwords did not match')
+            messages.error(request, 'A user with the provided credentials already exists.')
 
     return render(request, 'core/signup.html')
 
@@ -181,34 +189,42 @@ def signup_voter(request):
 
         password2 = request.POST['password2']
 
-        if password1 == password2:
+        user_already_exists = User.objects.filter(email=email).first()
 
-            User.objects.create(
-                username=username,
-                email=email,
-                first_name=first_name,
-                last_name=last_name
-            )
+        if not user_already_exists:
 
-            new_user = User.objects.get(email=email)
+            if password1 == password2:
 
-            new_user.set_password(password1)
+                User.objects.create(
+                    username=username,
+                    email=email,
+                    first_name=first_name,
+                    last_name=last_name
+                )
 
-            new_user.save()
+                new_user = User.objects.get(email=email)
 
-            user = authenticate(request, username=username, password=password1)
+                new_user.set_password(password1)
 
-            if user is not None:
+                new_user.save()
 
-                login(request, user)
+                user = authenticate(request, username=username, password=password1)
 
-            messages.success(request, 'Your user account has been created. Logged in successfully!')
+                if user is not None:
 
-            return redirect('register-voter')
+                    login(request, user)
+
+                messages.success(request, 'Your user account has been created. Logged in successfully!')
+
+                return redirect('register-voter')
+
+            else:
+
+                messages.error(request, 'Passwords did not match')
 
         else:
 
-            messages.error(request, 'Passwords did not match')
+            messages.error(request, 'A user with the provided credentials already exists.')
 
     return render(request, 'core/signup.html')
 
