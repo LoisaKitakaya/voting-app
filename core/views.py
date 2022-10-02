@@ -50,7 +50,7 @@ def register_organizer(request):
 
         messages.success(request, 'Your organizer profile has been created.')
 
-        return redirect('organizers-dashboard')
+        return redirect('home-page')
 
     return render(request, 'core/register_organizer.html')
 
@@ -78,7 +78,7 @@ def register_voter(request):
 
         messages.success(request, 'Your voter profile has been created.')
 
-        return redirect('voters-dashboard')
+        return redirect('home-page')
 
     return render(request, 'core/register_voter.html')
 

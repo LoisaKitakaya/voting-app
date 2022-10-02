@@ -54,10 +54,51 @@
         <li class="nav-item">
           <a class="nav-link" href="#">About us</a>
         </li>
+        <!-- if -->
+        {% if user.is_authenticated %}
+        <!-- if -->
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-sliders"></i> Console
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="{% url 'organizers-dashboard' %}"
+                >Organizer</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'voters-dashboard' %}"
+                >Voter</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <!-- else -->
+        {% else %}
+        <!-- else -->
+
         <li class="nav-item">
           <a class="nav-link" href="{% url 'login' %}">Log in</a>
         </li>
+
+        <!-- endif -->
+        {% endif %}
+        <!-- endif -->
       </ul>
+
+      <!-- if -->
+      {% if not user.is_authenticated %}
+      <!-- if -->
+
       <div class="dropdown d-flex dropstart">
         <button
           class="btn btn-sm btn-success dropdown-toggle"
@@ -80,6 +121,10 @@
           </li>
         </ul>
       </div>
+
+      <!-- endif -->
+      {% endif %}
+      <!-- endif -->
     </div>
   </div>
 </nav>
