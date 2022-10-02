@@ -22,7 +22,7 @@
 
 <!-- home page -->
 <div class="dashboard d-flex" style="height: 100vh">
-  <div class="dash-menu p-3" style="width: 20%">
+  <div class="dash-menu bg-light border-end p-3" style="width: 20%">
     <div class="m-auto" style="width: fit-content">
       <a class="navbar-brand" href="{% url 'home-page' %}"
         ><img
@@ -49,26 +49,110 @@
     </div>
   </div>
   <div class="dash-body p-3" style="width: 80%">
-    <div class="card text-center" style="min-height: 92vh">
-      <div class="card-header bg-light">
-        <ul class="nav nav-tabs card-header-tabs">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="true" href="#">Active</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
-        </ul>
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button
+          class="nav-link active"
+          id="nav-home-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-home"
+          type="button"
+          role="tab"
+          aria-controls="nav-home"
+          aria-selected="true"
+        >
+          Home
+        </button>
+        <button
+          class="nav-link"
+          id="nav-profile-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-profile"
+          type="button"
+          role="tab"
+          aria-controls="nav-profile"
+          aria-selected="false"
+        >
+          Profile
+        </button>
+        <button
+          class="nav-link"
+          id="nav-contact-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-contact"
+          type="button"
+          role="tab"
+          aria-controls="nav-contact"
+          aria-selected="false"
+        >
+          Contact
+        </button>
+        <button
+          class="nav-link"
+          id="nav-disabled-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-disabled"
+          type="button"
+          role="tab"
+          aria-controls="nav-disabled"
+          aria-selected="false"
+        >
+          Disabled
+        </button>
       </div>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">
-          With supporting text below as a natural lead-in to additional content.
-        </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div
+        class="tab-pane fade show p-3 active"
+        id="nav-home"
+        role="tabpanel"
+        aria-labelledby="nav-home-tab"
+        tabindex="0"
+      >
+        <h1>1</h1>
+        Conduct online elections with complete confidence in their reliability.
+        Polys is built by blockchain voting experts. Our first pilot took place
+        in 2016 and since then hundreds of organizations around the world have
+        held elections with our help.
+      </div>
+      <div
+        class="tab-pane fade p-3"
+        id="nav-profile"
+        role="tabpanel"
+        aria-labelledby="nav-profile-tab"
+        tabindex="0"
+      >
+        <h1>2</h1>
+        Conduct online elections with complete confidence in their reliability.
+        Polys is built by blockchain voting experts. Our first pilot took place
+        in 2016 and since then hundreds of organizations around the world have
+        held elections with our help.
+      </div>
+      <div
+        class="tab-pane fade p-3"
+        id="nav-contact"
+        role="tabpanel"
+        aria-labelledby="nav-contact-tab"
+        tabindex="0"
+      >
+        <h1>3</h1>
+        Conduct online elections with complete confidence in their reliability.
+        Polys is built by blockchain voting experts. Our first pilot took place
+        in 2016 and since then hundreds of organizations around the world have
+        held elections with our help.
+      </div>
+      <div
+        class="tab-pane fade p-3"
+        id="nav-disabled"
+        role="tabpanel"
+        aria-labelledby="nav-disabled-tab"
+        tabindex="0"
+      >
+        <h1>4</h1>
+        Conduct online elections with complete confidence in their reliability.
+        Polys is built by blockchain voting experts. Our first pilot took place
+        in 2016 and since then hundreds of organizations around the world have
+        held elections with our help.
       </div>
     </div>
   </div>
