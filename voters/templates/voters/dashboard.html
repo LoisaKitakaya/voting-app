@@ -1,0 +1,80 @@
+<!-- extend base template -->
+{% extends 'app.html' %}
+<!-- extend base template -->
+
+<!-- load static -->
+{% load static %}
+<!-- load static -->
+
+<!-- title -->
+
+<!-- extend block -->
+{% block title %} Dashboard {% endblock %}
+<!-- extend block -->
+
+<!-- title -->
+
+<!-- body -->
+
+<!-- extend block -->
+
+{% block body %}
+
+<!-- home page -->
+<div class="dashboard d-flex" style="height: 100vh">
+  <div class="dash-menu p-3" style="width: 20%">
+    <div class="m-auto" style="width: fit-content">
+      <a class="navbar-brand" href="{% url 'home-page' %}"
+        ><img
+          src="{% static 'img/logo.png' %}"
+          alt="logo"
+          width="75"
+          height="75"
+      /></a>
+    </div>
+    <hr />
+    <div class="mt-3 mb-3">
+      <button class="btn btn-outline-success container-fluid mb-3">
+        Create poll
+      </button>
+      <button class="btn btn-outline-primary container-fluid mb-3">
+        Register candidates
+      </button>
+      <a
+        href="{% url 'logout-user' %}"
+        class="btn btn-danger container-fluid mb-3"
+      >
+        Log out
+      </a>
+    </div>
+  </div>
+  <div class="dash-body p-3" style="width: 80%">
+    <div class="card text-center" style="min-height: 92vh">
+      <div class="card-header bg-light">
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="true" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">
+          With supporting text below as a natural lead-in to additional content.
+        </p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- home page -->
+
+{% endblock %}
+
+<!-- extend block -->

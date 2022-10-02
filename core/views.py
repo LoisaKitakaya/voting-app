@@ -50,7 +50,7 @@ def register_organizer(request):
 
         messages.success(request, 'Your organizer profile has been created.')
 
-        return redirect('home-page')
+        return redirect('organizers-dashboard')
 
     return render(request, 'core/register_organizer.html')
 
@@ -78,7 +78,7 @@ def register_voter(request):
 
         messages.success(request, 'Your voter profile has been created.')
 
-        return redirect('home-page')
+        return redirect('voters-dashboard')
 
     return render(request, 'core/register_voter.html')
 
@@ -98,7 +98,19 @@ def login_user(request):
 
             messages.success(request, 'Logged in successfully!')
 
-            return redirect('home-page')
+            user_type = request.user
+
+            is_organizer = Organizer.objects.filter(user=user_type).first()
+
+            is_voter = Voter.objects.filter(user=user_type)
+
+            if is_organizer:
+
+                return redirect('organizers-dashboard')
+
+            if is_voter:
+
+                return redirect('voters-dashboard')
 
         else:
 
@@ -200,7 +212,7 @@ def signup_voter(request):
 
     return render(request, 'core/signup.html')
 
-def logout(request):
+def logout_user(request):
 
     logout(request)
 
