@@ -11,7 +11,6 @@ class CandidateAdminView(admin.ModelAdmin):
         'first_name',
         'email',
         'organization',
-        'vying_position',
     )
 
     list_filter = (

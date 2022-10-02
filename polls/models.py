@@ -7,6 +7,7 @@ class Poll(models.Model):
     seat = models.CharField(max_length=254, blank=False)
     intro = models.TextField()
     organizer = models.ForeignKey(Organizer, on_delete=models.CASCADE)
+    open = models.BooleanField(default=True, blank=False)
     begin_date = models.DateField()
     end_date = models.DateField()
     created_date = models.DateTimeField(auto_now_add=True)
