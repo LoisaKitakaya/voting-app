@@ -1,29 +1,69 @@
 <div class="tab-content" id="nav-tabContent">
   <div
     class="tab-pane fade show p-3 active"
-    id="nav-home"
-    role="tabpanel"
-    aria-labelledby="nav-home-tab"
-    tabindex="0"
-  >
-    <h1>1</h1>
-    Conduct online elections with complete confidence in their reliability.
-    Polys is built by blockchain voting experts. Our first pilot took place in
-    2016 and since then hundreds of organizations around the world have held
-    elections with our help.
-  </div>
-  <div
-    class="tab-pane fade p-3"
     id="nav-polls"
     role="tabpanel"
     aria-labelledby="nav-polls-tab"
     tabindex="0"
   >
-    <h1>2</h1>
-    Conduct online elections with complete confidence in their reliability.
-    Polys is built by blockchain voting experts. Our first pilot took place in
-    2016 and since then hundreds of organizations around the world have held
-    elections with our help.
+    <!-- if -->
+    {% if all_polls %}
+    <!-- if -->
+
+    <!-- for -->
+    {% for poll in all_polls %}
+    <!-- for -->
+
+    <a href="" style="text-decoration: none">
+      <div class="card mb-3 shadow dash-body-elem">
+        <div
+          class="card-body d-flex justify-content-between align-items-center"
+        >
+          <div>
+            <p class="fs-5 text-dark">
+              <i class="bi bi-box-seam"></i> {{ poll.seat }}
+            </p>
+          </div>
+          <div>
+            <!-- if -->
+            {% if poll.open == True %}
+            <!-- if -->
+
+            <button class="btn btn-sm btn-outline-success disabled">
+              Status: Open
+            </button>
+
+            <!-- else -->
+            {% else %}
+            <!-- else -->
+
+            <button class="btn btn-sm btn-outline-warning disabled">
+              Status: Closed
+            </button>
+
+            <!-- endif -->
+            {% endif %}
+            <!-- endif -->
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- endfor -->
+    {% endfor %}
+    <!-- endfor -->
+
+    <!-- else -->
+    {% else %}
+    <!-- else -->
+
+    <div class="m-3">
+      <h1 class="text-center">No polls have been created yet.</h1>
+    </div>
+
+    <!-- endif -->
+    {% endif %}
+    <!--  -->
   </div>
   <div
     class="tab-pane fade p-3"
@@ -32,11 +72,49 @@
     aria-labelledby="nav-candidates-tab"
     tabindex="0"
   >
-    <h1>3</h1>
-    Conduct online elections with complete confidence in their reliability.
-    Polys is built by blockchain voting experts. Our first pilot took place in
-    2016 and since then hundreds of organizations around the world have held
-    elections with our help.
+    <!-- if -->
+    {% if candidates %}
+    <!-- if -->
+
+    <!-- for -->
+    {% for candidate in candidates %}
+    <!-- for -->
+
+    <a href="" style="text-decoration: none">
+      <div class="card mb-3 shadow dash-body-elem">
+        <div
+          class="card-body d-flex justify-content-between align-items-center"
+        >
+          <div>
+            <p class="fs-5 text-dark">
+              <i class="bi bi-person-bounding-box"></i>
+              <span>{{ candidate.first_name }} {{ candidate.last_name }}</span>
+            </p>
+          </div>
+          <div>
+            <button class="btn btn-sm btn-outline-primary disabled">
+              Poll: {{ candidate.poll.seat }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- endfor -->
+    {% endfor %}
+    <!-- endfor -->
+
+    <!-- else -->
+    {% else %}
+    <!-- else -->
+
+    <div class="m-3">
+      <h1 class="text-center">No candidates have been registered yet.</h1>
+    </div>
+
+    <!-- endif -->
+    {% endif %}
+    <!-- endif -->
   </div>
   <div
     class="tab-pane fade p-3"
@@ -45,10 +123,68 @@
     aria-labelledby="nav-profile-tab"
     tabindex="0"
   >
-    <h1>4</h1>
-    Conduct online elections with complete confidence in their reliability.
-    Polys is built by blockchain voting experts. Our first pilot took place in
-    2016 and since then hundreds of organizations around the world have held
-    elections with our help.
+    <!-- if -->
+    {% if profile %}
+    <!-- if -->
+
+    <div class="card text-bg-success mb-3" style="width: 18rem">
+      <div class="card-header">
+        <i class="bi bi-person-circle"></i> Logged in as:
+      </div>
+      <ul class="list-group list-group-flush">
+        <li
+          class="list-group-item d-flex justify-content-between align-items-start"
+        >
+          <div>
+            <i class="bi bi-patch-check-fill text-success"></i>
+            <span>{{ user_account.username }}</span>
+          </div>
+          <span class="badge bg-success rounded-pill"
+            >ID: {{ profile.personal_identification }}</span
+          >
+        </li>
+      </ul>
+    </div>
+
+    <br />
+
+    <div class="m-3">
+      <h1>Profile details</h1>
+    </div>
+
+    <ul class="list-group list-group-flush mb-3">
+      <li class="list-group-item fs-5">
+        <span class="fw-bold">Email:</span>
+        <span>{{ user_account.email }}</span>
+      </li>
+      <li class="list-group-item fs-5">
+        <span class="fw-bold">Phone:</span> <span>{{ profile.phone }}</span>
+      </li>
+      <li class="list-group-item fs-5">
+        <span class="fw-bold">Country:</span> <span>{{ profile.country }}</span>
+      </li>
+      <li class="list-group-item fs-5">
+        <span class="fw-bold">Sector:</span> <span>{{ profile.sector }}</span>
+      </li>
+      <li class="list-group-item fs-5">
+        <span class="fw-bold">Organization:</span>
+        <span>{{ profile.organization }}</span>
+      </li>
+      <li class="list-group-item fs-5">
+        <span class="fw-bold">Organization position:</span>
+        <span>{{ profile.organization_position }}</span>
+      </li>
+    </ul>
+
+    <br />
+
+    <div class="d-flex mb-3">
+      <button class="btn btn-primary m-1">Edit profile</button>
+      <button class="btn btn-danger m-1">Delete account</button>
+    </div>
+
+    <!-- endif -->
+    {% endif %}
+    <!-- endif -->
   </div>
 </div>

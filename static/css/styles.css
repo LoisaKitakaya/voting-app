@@ -52,3 +52,12 @@ body {
 .alert {
   border-radius: 0 !important;
 }
+
+.dash-body-elem {
+  transition-duration: 150ms !important;
+  transition-timing-function: ease-in-out !important;
+}
+
+.dash-body-elem:hover {
+  transform: scale(1.015) !important;
+}

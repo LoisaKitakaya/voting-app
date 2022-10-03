@@ -15,8 +15,13 @@ def dashboard(request):
 
     organizer_polls = Poll.objects.filter(organizer=organizer)
 
+    candidates = Candidate.objects.filter(organizer=organizer)
+
     context = {
         'all_polls': organizer_polls,
+        'profile': organizer,
+        'candidates': candidates,
+        'user_account': user,
     }
 
     return render(request, 'organizers/dashboard.html', context)
