@@ -16,23 +16,14 @@ def register_organizer(request):
     if request.method == 'POST':
 
         user = request.user
-
         id_type = request.POST['id_type']
-
         personal_identification = request.POST['personal_id']
-
         phone = request.POST['phone']
-
         country = request.POST['country']
-
         sector = request.POST['sector']
-
         organization = request.POST['organization']
-
         organization_position = request.POST['organization_position']
-
         organization_email = request.POST['organization_email']
-
         organization_phone = request.POST['organization_phone']
 
         Organizer.objects.create(
@@ -59,13 +50,9 @@ def register_voter(request):
     if request.method == 'POST':
 
         user = request.user
-
         id_type = request.POST['id_type']
-
         personal_identification = request.POST['personal_id']
-
         country = request.POST['country']
-
         organization = request.POST['organization']
 
         Voter.objects.create(
@@ -87,7 +74,6 @@ def login_user(request):
     if request.method == 'POST':
 
         username = request.POST['username']
-
         password = request.POST['password']
 
         user = authenticate(request, username=username, password=password)
@@ -123,15 +109,10 @@ def signup_organizer(request):
     if request.method == 'POST':
 
         username = request.POST['username']
-
         email = request.POST['email']
-
         first_name = request.POST['first_name']
-
         last_name = request.POST['last_name']
-
         password1 = request.POST['password1']
-
         password2 = request.POST['password2']
 
         user_already_exists = User.objects.filter(email=email).first()
@@ -178,15 +159,10 @@ def signup_voter(request):
     if request.method == 'POST':
 
         username = request.POST['username']
-
         email = request.POST['email']
-
         first_name = request.POST['first_name']
-
         last_name = request.POST['last_name']
-
         password1 = request.POST['password1']
-
         password2 = request.POST['password2']
 
         user_already_exists = User.objects.filter(email=email).first()

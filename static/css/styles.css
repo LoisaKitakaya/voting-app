@@ -51,6 +51,11 @@ body {
 .app-message,
 .alert {
   border-radius: 0 !important;
+  position: fixed;
+  right: 1rem !important;
+  bottom: 0.5rem !important;
+  min-width: 30% !important;
+  z-index: 100 !important;
 }
 
 .dash-body-elem {
