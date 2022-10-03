@@ -61,3 +61,7 @@ body {
 .dash-body-elem:hover {
   transform: scale(1.015) !important;
 }
+
+.dash-overflow {
+  overflow-y: auto !important;
+}
