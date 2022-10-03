@@ -1,7 +1,6 @@
 from django.db import models
 from organizers.models import Organizer
 from polls.models import Poll
-from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Candidate(models.Model):
@@ -13,7 +12,7 @@ class Candidate(models.Model):
     email = models.EmailField(max_length=254, blank=False)
     id_type = models.CharField(max_length=254, blank=False)
     personal_identification = models.CharField(max_length=254, blank=False)
-    photo = CloudinaryField('image')
+    image = models.ImageField(upload_to='images/', blank=True)
     country = models.CharField(max_length=254, blank=False)
     organization = models.CharField(max_length=254, blank=False)
     created_date = models.DateTimeField(auto_now_add=True)

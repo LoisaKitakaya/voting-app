@@ -67,20 +67,20 @@ def register_candidate(request):
         country = request.POST['country']
         organization = request.POST['organization']
 
-        # Candidate.objects.create(
-        #     organizer=organizer,
-        #     poll=poll,
-        #     first_name=first_name,
-        #     last_name=last_name,
-        #     email=email,
-        #     id_type=id_type,
-        #     personal_identification=personal_identification,
-        #     image=image,
-        #     country=country,
-        #     organization=organization
-        # )
+        Candidate.objects.create(
+            organizer=organizer,
+            poll=poll,
+            first_name=first_name,
+            last_name=last_name,
+            email=email,
+            id_type=id_type,
+            personal_identification=personal_identification,
+            image=image,
+            country=country,
+            organization=organization
+        )
 
-        print(f'{organizer}, {poll}, {image}')
+        # print(f'{organizer}, {poll}, {image}')
 
         messages.success(request, 'Candidate has been registered successfully.')
 

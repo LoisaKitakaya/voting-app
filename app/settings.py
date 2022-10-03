@@ -45,6 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # 3rd party apps
+    'cloudinary_storage',
+    'cloudinary',
+
     # my apps
     'core',
     'candidates',
@@ -53,9 +57,6 @@ INSTALLED_APPS = [
     'votes',
     'results',
     'organizers',
-
-    # 3rd party apps
-    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -149,11 +150,23 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# media files (images)
+
+MEDIA_URL = '/media/'
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 # cloudinary config
 
-cloudinary.config( 
-  cloud_name = "dit0fii18", 
-  api_key = "488158286488541", 
-  api_secret = "15AEbpxsXhNF828AaNQtQy7iOR0",
-  secure = True
-)
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dit0fii18',
+    'API_KEY': '488158286488541',
+    'API_SECRET': '15AEbpxsXhNF828AaNQtQy7iOR0'
+}
+
+# cloudinary.config( 
+#   cloud_name = "dit0fii18", 
+#   api_key = "488158286488541", 
+#   api_secret = "15AEbpxsXhNF828AaNQtQy7iOR0",
+#   secure = True
+# )
