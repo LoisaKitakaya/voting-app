@@ -70,3 +70,7 @@ body {
 .dash-overflow {
   overflow-y: auto !important;
 }
+
+#back {
+  margin-left: 4rem !important;
+}

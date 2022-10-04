@@ -22,8 +22,8 @@ urlpatterns = [
 
     # app urls
     path('', include('core.urls')),
-    path('organizers/', include('organizers.urls')),
-    path('voters/', include('voters.urls')),
+    path('organizer/', include('organizers.urls')),
+    path('voter/', include('voters.urls')),
     # path('candidates/', include('candidates.urls')),
     # path('polls/', include('polls.urls')),
     # path('votes/', include('votes.urls')),
