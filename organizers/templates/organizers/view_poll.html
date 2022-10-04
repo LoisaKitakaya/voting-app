@@ -81,17 +81,13 @@
     {% if this_poll.open == True %}
     <!-- if -->
 
-    <button class="btn btn-lg btn-success disabled mb-3">
-      Status: Open
-    </button>
+    <button class="btn btn-lg btn-success disabled mb-3">Status: Open</button>
 
     <!-- else -->
     {% else %}
     <!-- else -->
 
-    <button class="btn btn-lg btn-warning disabled mb-3">
-      Status: Closed
-    </button>
+    <button class="btn btn-lg btn-warning disabled mb-3">Status: Closed</button>
 
     <!-- endif -->
     {% endif %}
@@ -174,7 +170,11 @@
     <br />
 
     <div class="d-flex mb-3">
-      <button class="btn btn-primary m-1">View results</button>
+      <a
+        href="{% url 'poll-results' this_poll.id %}"
+        class="btn btn-primary m-1"
+        >View results</a
+      >
 
       <!-- if -->
       {% if this_poll.open == True %}

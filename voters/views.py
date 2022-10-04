@@ -1,4 +1,3 @@
-from operator import iadd
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import permission_required
 from polls.models import Poll
