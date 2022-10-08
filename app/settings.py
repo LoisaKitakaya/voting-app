@@ -15,7 +15,6 @@ import dj_database_url
 from pathlib import Path
 
 # cloudinary
-
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -27,8 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-26q%#6xc6_1g)i9iat2!727!-r**f_!*u4!os9$j%_c+*g$ljk'
+# SECURITY WARNING: keep the secret key used in production secret! for key refer to stash
+
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -171,6 +170,10 @@ MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # cloudinary config
+
+# for development: refer to stash
+
+# for production
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
